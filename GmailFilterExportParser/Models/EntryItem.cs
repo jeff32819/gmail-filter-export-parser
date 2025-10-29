@@ -60,12 +60,13 @@ public class EntryItem(List<AppsProperty> properties)
 
     /// <summary>
     ///     Helper method to find a specific property value
+    ///     Returns empty string if the property or its value is null.
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
     private string GetPropertyValue(string name)
     {
-        return Properties?.FirstOrDefault(p => p.Name == name)?.Value;
+        return Properties?.FirstOrDefault(p => p.Name == name)?.Value ?? string.Empty;
     }
 
     /// <summary>
